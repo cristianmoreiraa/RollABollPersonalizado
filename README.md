@@ -46,9 +46,24 @@ El NavMeshAgent se utiliza para como comenté anteriormente para que el enemigo 
 3. En tercer lugar, he añadido un sistema de `monedas`, nuestro objetivo será recolectar las 8 monedas que se encuentran por el mapa evitando las adversidades.  <b>¿Serás capaz?</b>
 
 ![img3](./img/monedas.png)
+
 4. Por último, he decido meter una pequeña ayudita para que sea más sencillo el nivel, cada vez que recolectes una `moneda` tu velocidad aumentará en: `0.33`.  <b>!A ver si esto te es de ayuda...¡</b>
 
 ![img3](./img/velocidad.png)
+
+
+<details><summary>animator</summary>
+
+![](./img/Animator.png)
+
+
+En este caso lo que hace nuestro animator es cambiar el tamaño de la pelota cuando cogemos una moneda (PickUp)
+
+Esta es el Animation que tenemos:
+
+![](./img/Animation.png)
+
+</details>
 
 ## Explicamos el código:
 
