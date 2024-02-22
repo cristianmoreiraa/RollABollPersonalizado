@@ -4,6 +4,41 @@
 
 1. En primer lugar, he añadido un `Enemigo` el cual nos persigue todo el rato y en el caso de que nos pille nos caeremos del mapa y no nos dejará seguir jugando. <b>!Todo un reto escapar de él¡</b>
 ![img2](./img/Enemigo.png)
+
+<details><summary>Script Enemigo y Foto Explicativa</summary>
+
+```cs
+using UnityEngine;
+using UnityEngine.AI;
+public class Enemy : MonoBehaviour
+{
+    private NavMeshAgent pathfinder;
+    private Transform target;
+    
+    void Start()
+    {
+        pathfinder = GetComponent<NavMeshAgent>();
+        target = GameObject.Find("Player").transform;
+    }
+    void Update()
+    {
+        pathfinder.SetDestination(target.position);
+        Debug.Log(target.position);
+    }
+}
+
+```
+Nuestro enmigo es el cilindro que se encuentra rodeado y la zona en azul es la parte por la cual se puede mover nuestro enemigo.
+![img2](./img/enemy.png)
+
+El NavMeshAgent se utiliza para como comenté anteriormente para que el enemigo pueda moverse por el mapa, en este caso, el enemigo se moverá hacia el jugador.
+
+![img13](./img/navmesh.png)
+
+</details>
+
+
+
 2. En segundo lugar, he añadido unos `Obstáculos` que nos los pondrán aun más dificil, para poder conseguir recolectar todas las monedas.  <b>!Ten cuidado¡</b>
 
 ![img1](./img/Obstaculos.png)
@@ -58,6 +93,10 @@ Al multiplicar `rotateSpeedY` por `Time.deltaTime`, se asegura que la rotación 
 ### Uso:
 
 Para usar este script, simplemente adjunta el script `RotatorObstaculo.cs` a cualquier objeto en tu escena en Unity (En este caso al objeto Obstaculo). Luego, ajusta la variable `rotateSpeedY` en el Inspector para controlar la velocidad de rotación del objeto en el eje Y.
+
+
+
+
 
 
 
